@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>麻布十番 まつげ＆眉毛サロン HILLS（ヒルズ）</title>
+    <meta name="keywords" content="麻布十番,港区,まつげエクステ,長もち,まつエク,ヒルズ,眉毛サロン" />
+    <meta name="description" content="麻布十番駅すぐ。雑誌やテレビなどメディアでも紹介されている実力派のまつエク・まつげパーマ・眉毛デザインサロン" />
+    
+    <!-- CSS Dependencies -->
+    <link href="css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.css" rel="stylesheet" />
+    
+    <style type="text/css">
+        :root {
+            --primary-color: #a68b5a;
+            --primary-dark: #8a7146;
+            --bg-light: #faf8f5;
+            --text-main: #333333;
+            --text-sub: #666666;
+            --border-color: #e0d0b0;
+        }
+
+        body {
+            font-family: "Hiragino Mincho ProN", "MS Mincho", serif;
+            color: var(--text-main);
+            line-height: 1.8;
+            background-color: #fff;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { color: inherit; text-decoration: none; transition: 0.3s; }
+        img { max-width: 100%; height: auto; vertical-align: middle; }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- Header --- */
+        header {
+            padding: 20px 0;
+            border-bottom: 1px solid #f0ede8;
+        }
+        .header-top {
+            display: flex;
+            justify-content: flex-end;
+            font-size: 11px;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        .header-nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+        .header-nav a:hover { color: var(--primary-color); }
+
+        /* --- Slider --- */
+        .main-visual {
+            margin: 20px 0 40px;
+        }
+
+        /* --- Icon Menu --- */
+        .icon-menu {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 12px;
+            margin-bottom: 60px;
+        }
+        @media (max-width: 768px) {
+            .icon-menu { grid-template-columns: repeat(3, 1fr); }
+        }
+        .icon-item {
+            background: #fff;
+            padding: 20px 5px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .icon-item:hover {
+            box-shadow: 0 5px 15px rgba(166, 139, 90, 0.15);
+            transform: translateY(-3px);
+            border-color: var(--primary-color);
+        }
+        .icon-visual {
+            width: 32px;
+            height: 32px;
+            margin: 0 auto 10px;
+            stroke: var(--primary-color);
+            fill: none;
+            stroke-width: 1.5;
+        }
+        .icon-label {
+            font-size: 12px;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: block;
+        }
+
+        /* --- Concept Section --- */
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .concept-wrapper {
+            max-width: 800px;
+            margin: 0 auto 60px;
+            padding: 0 20px;
+        }
+        .concept-catch {
+            display: block;
+            margin: 0 auto 30px;
+            width: 275px;
+        }
+        .concept-intro {
+            font-size: 18px;
+            text-align: center;
+            margin-bottom: 50px;
+            letter-spacing: 0.1em;
+        }
+        .concept-intro span { color: var(--primary-color); font-weight: bold; }
+        
+        .concept-block { margin-bottom: 40px; }
+        .concept-block h3 {
+            font-size: 18px;
+            color: var(--primary-color);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        .concept-highlight {
+            font-weight: bold;
+            background: linear-gradient(transparent 80%, #f4e7d3 80%);
+        }
+        .closing-box {
+            text-align: center;
+            padding: 30px;
+            background: rgba(250, 248, 245, 0.8);
+            border: 1px solid #f0ede8;
+            margin: 40px 0;
+            font-style: italic;
+        }
+
+        /* --- Buttons --- */
+        .btn-gold {
+            display: block;
+            width: fit-content;
+            margin: 0 auto;
+            background: var(--primary-color);
+            color: #fff !important;
+            padding: 15px 50px;
+            font-weight: bold;
+            border-radius: 2px;
+            box-shadow: 0 4px 0 #8a7146;
+        }
+        .btn-gold:hover { transform: translateY(2px); box-shadow: 0 2px 0 #8a7146; }
+
+        /* --- YouTube Promo --- */
+        .promo-banner {
+            background: #fafafa;
+            border: 1px solid #eee;
+            padding: 30px;
+            margin: 60px 0;
+            border-radius: 4px;
+        }
+        .promo-flex {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+        .yt-icon {
+            width: 50px;
+            height: 50px;
+            background: #ff0000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            flex-shrink: 0;
+        }
+        .promo-text-main { font-weight: bold; font-size: 16px; }
+        .promo-text-sub { color: #ff0000; font-size: 13px; display: block; }
+
+        /* --- Instagram --- */
+        .instagram-section { margin-bottom: 60px; }
+        .insta-title-link {
+            display: block;
+            text-align: right;
+            font-size: 14px;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        /* --- Information --- */
+        .info-section { margin-bottom: 80px; }
+        .info-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .info-table tr { border-bottom: 1px solid #f9f9f9; }
+        .info-table td { padding: 15px 10px; vertical-align: top; }
+        .info-date { width: 120px; font-weight: bold; color: var(--text-sub); }
+        .more-toggle {
+            text-align: center;
+            margin-top: 20px;
+            cursor: pointer;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        /* --- Recruit (Modest Design) --- */
+        .recruit-banner {
+            background: #f9f9f9;
+            border: 1px solid #eee;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 40px;
+            border-radius: 4px;
+        }
+        .recruit-banner h4 { 
+            font-size: 14px; 
+            color: #888; 
+            margin-bottom: 5px; 
+            font-weight: bold;
+            letter-spacing: 0.1em;
+        }
+        .recruit-banner p {
+            font-size: 12px;
+            color: #777;
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+        .recruit-link {
+            font-size: 12px;
+            color: var(--primary-color) !important;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+        .recruit-link:hover { color: var(--primary-dark) !important; }
+
+        /* --- Footer --- */
+        footer {
+            background: #fdfcfb;
+            padding: 40px 0;
+            border-top: 1px solid #f0ede8;
+            text-align: center;
+        }
+        .invoice-info { font-size: 12px; color: #999; margin-bottom: 20px; }
+        .footer-nav { margin-bottom: 30px; font-size: 12px; color: var(--text-sub); }
+        .footer-nav a { margin: 0 8px; }
+        .footer-logo { margin-bottom: 15px; font-weight: bold; letter-spacing: 0.2em; }
+        .copyright { font-size: 10px; color: #bbb; }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="container">
+        <div class="header-top">
+            <a href="">Japanese</a> / <a href="en/index.html">English</a> / <a href="https://hillssalon.com/common/profile.html">お仕事関係の方はこちらへ</a>
+        </div>
+        <nav class="header-nav">
+            <a href="index.html">Home</a>
+            <a href="https://hillssalon.com/first/flow.html">初めての方へ</a>
+            <a href="https://hillssalon.com/menu/menu.html">メニュー/料金</a>
+            <a href="qanda/index.html">Q&amp;A</a>
+            <a href="design/index.html">デザインカタログ</a>
+            <a href="salon/about.html">サロン案内</a>
+            <a href="https://hillssalon.com/common/reservation.html">キャンセルポリシー</a>
+            <a href="https://hillssalon.com/common/reservation.html">ご予約/お問合せ</a>
+        </nav>
+    </div>
+</header>
+
+<main class="container">
+    <!-- Slider -->
+    <section class="main-visual">
+        <ul id="slider">
+            <li><img src="common/img/index_slide6.png" alt="麻布十番 ヒルズ" /></li>
+            <li><img src="common/img/index_slide3.png" alt="麻布十番 ヒルズ" /></li>
+            <li><img src="common/img/index_slide4.png" alt="麻布十番 ヒルズ" /></li>
+            <li><img src="common/img/index_slide5.png" alt="麻布十番 ヒルズ" /></li>
+            <li><img src="common/img/index_slide_logo.png" alt="麻布十番 ヒルズ" /></li>
+        </ul>
+    </section>
+
+    <!-- Icon Menu -->
+    <nav class="icon-menu">
+        <a href="https://hillssalon.com/first/flow.html" class="icon-item">
+            <svg class="icon-visual" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            <span class="icon-label">初めての方へ</span>
+        </a>
+        <a href="salon/safety.html" class="icon-item">
+            <svg class="icon-visual" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            <span class="icon-label">安全性への配慮</span>
+        </a>
+        <a href="https://hillssalon.com/menu/menu.html" class="icon-item">
+            <svg class="icon-visual" viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"></path></svg>
+            <span class="icon-label">メニュー／料金</span>
+        </a>
+        <!-- スタッフ紹介から代表挨拶へ変更 -->
+        <a href="https://hillssalon.com/salon/staff.html" class="icon-item">
+            <svg class="icon-visual" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            <span class="icon-label">代表挨拶</span>
+        </a>
+        <a href="media/index.html" class="icon-item">
+            <svg class="icon-visual" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="15" rx="2" ry="2"></rect><polyline points="17 2 12 7 7 2"></polyline></svg>
+            <span class="icon-label">メディア掲載</span>
+        </a>
+        <a href="https://hillssalon.com/common/reservation.html" class="icon-item">
+            <svg class="icon-visual" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+            <span class="icon-label">ご予約</span>
+        </a>
+    </nav>
+
+    <!-- Concept -->
+    <section class="concept-section">
+        <div class="section-title">
+            <img src="common/img/index_design_title.png" alt="Design & Quality" width="610" />
+        </div>
+        
+        <div class="concept-wrapper">
+            <div class="concept-header">
+                <img src="https://hillssalon.com/common/img/index_design_catch.png" class="concept-catch" alt="目元の美しさをプロデュース" />
+                <p class="concept-intro">女性のお顔の雰囲気を決定づけるのは、<span>「目元」</span>です。<br />お顔の中でも重要な意味を持つパーツだからこそ、<br />強いこだわりを持つ方も多いはず。</p>
+            </div>
+
+            <div class="concept-block">
+                <h3>一人ひとりに合わせたオーダーメイド・デザイン</h3>
+                <p>ヒルズでは、全てが<span class="concept-highlight">オーダーメイドのデザイン力</span>、高い技術力を用いて、お客様が求める雰囲気へと近づけていきます。目元にはそれぞれ個性があり、そして求めるデザインも違うはずです。ぜひあなたがなりたい目元の印象について、私どもにお知らせください。</p>
+                <p>ゴージャスな目元からナチュラルな目元まで、パーフェクトな雰囲気に仕上げるため、丁寧なカウンセリングを行っております。</p>
+            </div>
+
+            <div class="concept-block">
+                <h3>国内外で信頼される確かな技術力</h3>
+                <p>美しさを長くキープできるのは、ヒルズがこだわる高い技術力があってこそ。<br />だからこそ、国内のお客様だけではなく、<span class="concept-highlight">海外から一時帰国されたお客様</span>にもご満足いただいております。<br />また近年は、一流ホテルからの紹介を受け、施術させていただく機会も増えております。</p>
+            </div>
+
+            <div class="concept-block">
+                <h3>安心・安全への徹底したこだわり</h3>
+                <p>安全性と衛生面においても、徹底したこだわりを持つヒルズ。安心な<span class="concept-highlight">皮膚科提携クリニックサロン</span>です。</p>
+            </div>
+
+            <div class="closing-box">
+                極上の癒し空間の中で、理想の目元を手に入れるための<br />贅沢な時間をお過ごしください。
+            </div>
+
+            <a href="design/index.html" class="btn-gold">≫ デザインカタログはこちら</a>
+        </div>
+    </section>
+
+    <!-- YouTube Promo -->
+    <section class="promo-banner">
+        <a href="https://youtu.be/X1mOWOTFjto?si=Fv6qG1ks6ILxA2gP&t=30" target="_blank">
+            <div class="promo-flex">
+                <div class="yt-icon">▶</div>
+                <div>
+                    <span class="promo-text-main">★「彩野ちゃんの美を作るサロンを密着公開！(福王寺家の日々/YouTube)」</span>
+                    <span class="promo-text-sub">当サロンが紹介されました！動画を視聴する</span>
+                </div>
+            </div>
+        </a>
+    </section>
+
+    <!-- Instagram -->
+    <section class="instagram-section">
+        <a href="https://www.instagram.com/hillssalon_official/" target="_blank" class="insta-title-link">≫ サロンInstagram</a>
+        <!-- SnapWidget -->
+        <script src="https://snapwidget.com/js/snapwidget.js"></script>
+        <iframe src="https://snapwidget.com/embed/992089" class="snapwidget-widget" allowtransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:100%; height: 500px;"></iframe>
+    </section>
+
+    <!-- Information -->
+    <section class="info-section">
+        <div class="info-header">
+            <h2 style="font-weight: bold; font-size: 18px;">Latest Information</h2>
+            <a href="information/index.html" style="font-size: 13px; color: var(--primary-color);">≫ 一覧を見る</a>
+        </div>
+        
+        <table class="info-table">
+            <!-- 2026.1 -->
+            <tr>
+                <td class="info-date">2026.1</td>
+                <td>
+                    <a href="https://instagram.com/ai.1988kg?igshid=MzRlODBiNWFlZA==">加護亜依 様（まつげパーマ）</a><br />
+                    <a href="https://www.instagram.com/_junna_?igsh=MW45NXZtOTRtaTJuZQ==">盛純菜 様（まつげパーマ上下）</a>
+                </td>
+            </tr>
+            <!-- 2025.12 -->
+            <tr>
+                <td class="info-date">2025.12</td>
+                <td>
+                    <a href="https://instagram.com/ai.1988kg?igshid=MzRlODBiNWFlZA==">加護亜依 様（まつげパーマ）※月内2回ご来店</a><br />
+                    <a href="https://instagram.com/ayano_fukuoji?igshid=YmM0MjE2YWMzOA==">福王寺彩野 様（まつげエクステ）</a><br />
+                    <a href="https://www.instagram.com/_junna_?igsh=MW45NXZtOTRtaTJuZQ==">盛純菜 様（まつげパーマ上下・アイブロウ）</a><br />
+                    <a href="https://www.instagram.com/hisui_juri/">河崎じゅり 様（エクステオフ）</a>
+                </td>
+            </tr>
+            <!-- 2025.11 -->
+            <tr>
+                <td class="info-date">2025.11</td>
+                <td>
+                    <a href="https://instagram.com/ayano_fukuoji?igshid=YmM0MjE2YWMzOA==">福王寺彩野 様（まつげエクステ）</a><br />
+                    <a href="https://www.instagram.com/eritsukimoto?igsh=MTU5c2w3cXU3NXR0aw==">月本エリ 様（まつげパーマ）</a><br />
+                    <a href="https://www.instagram.com/hisui_juri/">河崎じゅり 様（まつげパーマ＆エクステ）</a>
+                </td>
+            </tr>
+            <!-- 2025.10 -->
+            <tr>
+                <td class="info-date">2025.10</td>
+                <td>
+                    <a href="https://instagram.com/ayano_fukuoji?igshid=YmM0MjE2YWMzOA==">福王寺彩野 様（まつげエクステ）※月内3回ご来店</a><br />
+                    <a href="https://instagram.com/ai.1988kg?igshid=MzRlODBiNWFlZA==">加護亜依 様（まつげエクステ）</a><br />
+                    <a href="https://www.instagram.com/hisui_juri/">河崎じゅり 様（まつげパーマ＆エクステ）※月内3回ご来店</a>
+                </td>
+            </tr>
+        </table>
+
+        <div class="more-toggle" onclick="document.getElementById('more-info').style.display='block'; this.style.display='none';">
+            ▼ view more
+        </div>
+
+        <div id="more-info" style="display:none;">
+            <table class="info-table">
+                <tr>
+                    <td class="info-date">2025.9.6</td>
+                    <td><a href="https://www.instagram.com/eritsukimoto?igsh=MTU5c2w3cXU3NXR0aw==">月本えり様 エクステパーマにてご来店</a></td>
+                </tr>
+                <tr>
+                    <td class="info-date">2025.9.1&16</td>
+                    <td><a href="https://www.instagram.com/ayano_fukuoji?igsh=czlwaHkyaG55dzJs">福王寺彩野様 エクステパーマにてご来店</a></td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <!-- Recruit (Modest Design) -->
+    <section class="recruit-banner">
+        <h4>RECRUIT</h4>
+        <p>HILLSでは、共にお店を盛り上げてくれるアイデザイナーを募集しています。</p>
+        <a href="https://hillssalon.com/common/recruit.html" class="recruit-link">採用情報の詳細はこちら</a>
+    </section>
+
+</main>
+
+<footer>
+    <div class="container">
+        <div class="invoice-info">当店は、適格請求書登録番号を取得しております。</div>
+        <nav class="footer-nav">
+            <a href="index.html">Home</a>｜
+            <a href="https://hillssalon.com/menu/menu.html">メニュー/料金</a>｜
+            <a href="qanda/index.html">Q&amp;A</a>｜
+            <a href="design/index.html">デザインカタログ</a>｜
+            <a href="salon/about.html">サロン案内</a>｜
+            <a href="media/index.html">メディア掲載</a>｜
+            <a href="https://hillssalon.com/common/reservation.html">ご予約/お問合せ</a>｜
+            <a href="common/recruit.html">求人</a>｜
+            <a href="common/profile.html">会社概要</a>｜
+            <a href="common/privacy.html">個人情報保護方針</a>｜
+            <a href="#container" target="_self">Pagetop</a>
+        </nav>
+        <div class="footer-logo">HILLS AZABU JUBAN</div>
+        <div class="copyright">Copyright © 2012-2026 Hills All Rights Reserved.</div>
+    </div>
+</footer>
+
+<!-- JS Dependencies -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    if ($.fn.bxSlider) {
+        $('#slider').bxSlider({
+            auto: true,
+            pause: 5000,
+            speed: 1000,
+            mode: 'fade',
+            pager: false,
+            controls: false
+        });
+    }
+});
+</script>
+
+</body>
+</html>
